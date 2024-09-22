@@ -1,5 +1,5 @@
 <template>
-    <label class="swap swap-rotate absolute bottom-4 right-4">
+    <label class="swap swap-rotate fixed bottom-4 right-4 p-2 bg-gray-200 rounded-full">
         <!-- this hidden checkbox controls the state -->
         <input type="checkbox" class="theme-controller" value="dark" />
 

@@ -1,13 +1,13 @@
 <template>
-    <div class="relative bg-slate-500 w-full py-20 px-4 h-screen">
-        <AppHeader />
-        <ThemeButton />
-        <main class="w-full bg-black py-4 px-3 mt-11">
-            <CodeBlock />
-            <Preview />
-            <ControlPanel />
-        </main>
-    </div>
+  <div class="relative h-full w-full bg-slate-500 px-4 py-20">
+    <AppHeader />
+    <ThemeButton />
+    <main class="mt-11 w-full bg-black px-3 py-4">
+      <CodeBlock />
+      <Preview />
+      <ControlPanel />
+    </main>
+  </div>
 </template>
 
 <script setup lang="ts">
