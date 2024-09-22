@@ -14,21 +14,23 @@
       max="100"
       class="range"
       v-model="sliderValue"
-      style="--range-shdw: none"
+      @change="$emit(`update${label.replace(/\s/g, '')}`, sliderValue)"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useTemplateRef, ref, watch } from "vue";
+import { useTemplateRef, ref } from "vue";
 const sliderValue = ref(40);
 const input = useTemplateRef("input");
-watch(sliderValue, () => {
-  console.log(sliderValue.value);
-});
+
 defineProps({
   label: String,
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+input {
+  --range-shdw: none;
+}
+</style>
