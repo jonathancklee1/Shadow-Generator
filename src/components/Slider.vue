@@ -10,21 +10,20 @@
       min="-100"
       max="100"
       class="range"
-      v-model="sliderValue"
-      @input="$emit(`update${label.replace(/\s/g, '')}`, sliderValue)"
+      :value="storeValue"
+      @input="
+        (event) =>
+          $emit(`update${label.replace(/\s/g, '')}`, event.target.value)
+      "
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-
 const props = defineProps({
   label: String,
   storeValue: Number,
 });
-console.log(props.storeValue);
-const sliderValue = ref(props.storeValue);
 </script>
 
 <style scoped>

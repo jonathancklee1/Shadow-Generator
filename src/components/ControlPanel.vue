@@ -8,7 +8,12 @@
         <TextInput
           label="Horizontal Offset"
           class="absolute right-0 top-0"
-          :storeValue="+shadowStore.horizontalOffset"
+          :storeValue="+latestHorizontalOffset"
+          @update-horizontal-offset="
+            (value) => {
+              shadowStore.setHorizontalOffset(value);
+            }
+          "
         />
       </div>
       <Slider
@@ -18,7 +23,7 @@
             shadowStore.setHorizontalOffset(value);
           }
         "
-        :storeValue="+shadowStore.horizontalOffset"
+        :storeValue="+latestHorizontalOffset"
       />
     </div>
     <div>
@@ -29,7 +34,12 @@
         <TextInput
           label="Vertical Offset"
           class="absolute right-0 top-0"
-          :storeValue="+shadowStore.verticalOffset"
+          :storeValue="+latestVerticalOffset"
+          @update-vertical-offset="
+            (value) => {
+              shadowStore.setVerticalOffset(value);
+            }
+          "
         />
       </div>
       <Slider
@@ -39,7 +49,7 @@
             shadowStore.setVerticalOffset(value);
           }
         "
-        :storeValue="+shadowStore.verticalOffset"
+        :storeValue="+latestVerticalOffset"
       />
     </div>
 
@@ -51,7 +61,12 @@
         <TextInput
           label="Blur Radius"
           class="absolute right-0 top-0"
-          :storeValue="+shadowStore.blurRadius"
+          :storeValue="+latestBlurRadius"
+          @update-blur-radius="
+            (value) => {
+              shadowStore.setBlurRadius(value);
+            }
+          "
         />
       </div>
       <Slider
@@ -61,7 +76,7 @@
             shadowStore.setBlurRadius(value);
           }
         "
-        :storeValue="+shadowStore.blurRadius"
+        :storeValue="+latestBlurRadius"
       />
     </div>
 
@@ -73,7 +88,12 @@
         <TextInput
           label="Spread"
           class="absolute right-0 top-0"
-          :storeValue="+shadowStore.spread"
+          :storeValue="+latestSpread"
+          @update-spread="
+            (value) => {
+              shadowStore.setSpread(value);
+            }
+          "
         />
       </div>
       <Slider
@@ -83,7 +103,7 @@
             shadowStore.setSpread(value);
           }
         "
-        :storeValue="+shadowStore.spread"
+        :storeValue="+latestSpread"
       />
     </div>
   </div>
@@ -93,7 +113,19 @@
 import Slider from "./Slider.vue";
 import TextInput from "./TextInput.vue";
 import { useShadowStore } from "../stores/ShadowStore";
+import { ref } from "vue";
 const shadowStore = useShadowStore();
+let latestHorizontalOffset = ref(0);
+let latestVerticalOffset = ref(0);
+let latestBlurRadius = ref(0);
+let latestSpread = ref(0);
+shadowStore.$subscribe((mutation, state) => {
+  // console.log("Store updated:" + state.horizontalOffset + state.verticalOffset);
+  latestHorizontalOffset.value = state.horizontalOffset;
+  latestVerticalOffset.value = state.verticalOffset;
+  latestBlurRadius.value = state.blurRadius;
+  latestSpread.value = state.spread;
+});
 </script>
 
 <style scoped></style>
