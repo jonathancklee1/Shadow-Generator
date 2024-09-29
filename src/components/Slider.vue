@@ -1,32 +1,30 @@
 <template>
   <div>
-    <label for="range" class="mb-4 block text-center text-xl font-medium">{{
-      label
-    }}</label>
     <div class="mb-2 flex justify-between text-xl">
-      <span>0</span>
+      <span>-100</span>
       <span>100</span>
     </div>
     <input
       ref="input"
       type="range"
-      min="0"
+      min="-100"
       max="100"
       class="range"
       v-model="sliderValue"
-      @change="$emit(`update${label.replace(/\s/g, '')}`, sliderValue)"
+      @input="$emit(`update${label.replace(/\s/g, '')}`, sliderValue)"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useTemplateRef, ref } from "vue";
-const sliderValue = ref(40);
-const input = useTemplateRef("input");
+import { ref } from "vue";
 
-defineProps({
+const props = defineProps({
   label: String,
+  storeValue: Number,
 });
+console.log(props.storeValue);
+const sliderValue = ref(props.storeValue);
 </script>
 
 <style scoped>
