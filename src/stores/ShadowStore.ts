@@ -9,7 +9,7 @@ export const useShadowStore = defineStore("shadow", () => {
 
   const shadowClass = computed(
     () =>
-      `box-shadow: ${horizontalOffset.value} ${verticalOffset.value} ${blurRadius.value} ${spread.value};`,
+      `box-shadow: ${horizontalOffset.value || 0} ${verticalOffset.value || 0} ${blurRadius.value || 0} ${spread.value || 0};`,
   );
   /**
    * Sets the horizontal offset for the shadow.

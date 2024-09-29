@@ -5,7 +5,6 @@
     @input="
       (event) => {
         $emit(`update${label.replace(/\s/g, '')}`, event.target.value);
-        console.log('change', inputValue);
       }
     "
     class="input input-bordered w-full max-w-20"
