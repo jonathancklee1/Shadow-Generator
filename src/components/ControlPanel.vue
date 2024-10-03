@@ -1,13 +1,15 @@
 <template>
-  <div class="mt-6 flex flex-col gap-4 bg-white p-6">
-    <div>
+  <div
+    class="text-secondary-text bg-secondary-background mt-6 flex flex-col gap-4 p-6"
+  >
+    <div class="">
       <div class="relative">
         <label for="range" class="mb-8 block text-center text-xl font-medium"
           >Horizontal Offset</label
         >
         <TextInput
           label="Horizontal Offset"
-          class="absolute right-0 top-0"
+          class="text-primary-text absolute right-0 top-0"
           :storeValue="+latestHorizontalOffset"
           @update-horizontal-offset="
             (value) => {
@@ -37,7 +39,7 @@
         >
         <TextInput
           label="Vertical Offset"
-          class="absolute right-0 top-0"
+          class="text-primary-text absolute right-0 top-0"
           :storeValue="+latestVerticalOffset"
           @update-vertical-offset="
             (value) => {
@@ -68,7 +70,7 @@
         >
         <TextInput
           label="Blur Radius"
-          class="absolute right-0 top-0"
+          class="text-primary-text absolute right-0 top-0"
           :storeValue="+latestBlurRadius"
           @update-blur-radius="
             (value) => {
@@ -99,7 +101,7 @@
         >
         <TextInput
           label="Spread"
-          class="absolute right-0 top-0"
+          class="text-primary-text absolute right-0 top-0"
           :storeValue="+latestSpread"
           @update-spread="
             (value) => {

@@ -7,9 +7,6 @@
       ref="shadowPreview"
       :style="{ boxShadow: shadowClass }"
     ></div>
-    <div>
-      {{ shadowClass }}
-    </div>
   </div>
 </template>
 

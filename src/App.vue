@@ -1,8 +1,8 @@
 <template>
-  <div class="relative h-full w-full bg-slate-500 px-4 py-20">
+  <div class="relative h-full w-full px-4 py-20">
     <AppHeader />
     <ThemeButton />
-    <main class="mt-11 w-full bg-black px-3 py-4">
+    <main class="bg-primary-background mt-11 w-full px-3 py-4">
       <CodeBlock />
       <Preview />
       <ControlPanel />
