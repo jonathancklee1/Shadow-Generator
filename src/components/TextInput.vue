@@ -8,8 +8,8 @@
       }
     "
     class="input input-bordered w-full max-w-20"
-    min="-100"
-    max="100"
+    :min="min"
+    :max="max"
   />
 </template>
 
@@ -18,6 +18,8 @@ import { useShadowStore } from "../stores/ShadowStore";
 const props = defineProps({
   label: String,
   storeValue: Number,
+  min: Number,
+  max: Number,
 });
 </script>
 

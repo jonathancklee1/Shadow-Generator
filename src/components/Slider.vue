@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="mb-2 flex justify-between text-xl">
-      <span>-100</span>
-      <span>100</span>
+      <span>{{ min }}</span>
+      <span>{{ max }}</span>
     </div>
     <input
       ref="input"
       type="range"
-      min="-100"
-      max="100"
+      :min="min"
+      :max="max"
       class="range"
       :value="storeValue"
       @input="
@@ -23,6 +23,8 @@
 const props = defineProps({
   label: String,
   storeValue: Number,
+  min: Number,
+  max: Number,
 });
 </script>
 

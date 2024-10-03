@@ -14,6 +14,8 @@
               shadowStore.setHorizontalOffset(value);
             }
           "
+          :min="-100"
+          :max="100"
         />
       </div>
       <Slider
@@ -23,6 +25,8 @@
             shadowStore.setHorizontalOffset(value);
           }
         "
+        :min="-100"
+        :max="100"
         :storeValue="+latestHorizontalOffset"
       />
     </div>
@@ -40,6 +44,8 @@
               shadowStore.setVerticalOffset(value);
             }
           "
+          :min="-100"
+          :max="100"
         />
       </div>
       <Slider
@@ -49,6 +55,8 @@
             shadowStore.setVerticalOffset(value);
           }
         "
+        :min="-100"
+        :max="100"
         :storeValue="+latestVerticalOffset"
       />
     </div>
@@ -67,6 +75,8 @@
               shadowStore.setBlurRadius(value);
             }
           "
+          :min="0"
+          :max="100"
         />
       </div>
       <Slider
@@ -76,6 +86,8 @@
             shadowStore.setBlurRadius(value);
           }
         "
+        :min="0"
+        :max="100"
         :storeValue="+latestBlurRadius"
       />
     </div>
@@ -94,6 +106,8 @@
               shadowStore.setSpread(value);
             }
           "
+          :min="-100"
+          :max="100"
         />
       </div>
       <Slider
@@ -103,6 +117,8 @@
             shadowStore.setSpread(value);
           }
         "
+        :min="-100"
+        :max="100"
         :storeValue="+latestSpread"
       />
     </div>
