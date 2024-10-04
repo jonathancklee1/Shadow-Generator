@@ -1,6 +1,6 @@
 <template>
   <div
-    class="text-secondary-text bg-secondary-background mt-6 flex flex-col gap-4 p-6"
+    class="mt-6 flex flex-col gap-4 bg-secondary-background p-6 text-secondary-text"
   >
     <div class="">
       <div class="relative">
@@ -9,7 +9,7 @@
         >
         <TextInput
           label="Horizontal Offset"
-          class="text-primary-text absolute right-0 top-0"
+          class="absolute right-0 top-0 text-primary-text"
           :storeValue="+latestHorizontalOffset"
           @update-horizontal-offset="
             (value) => {
@@ -39,7 +39,7 @@
         >
         <TextInput
           label="Vertical Offset"
-          class="text-primary-text absolute right-0 top-0"
+          class="absolute right-0 top-0 text-primary-text"
           :storeValue="+latestVerticalOffset"
           @update-vertical-offset="
             (value) => {
@@ -70,7 +70,7 @@
         >
         <TextInput
           label="Blur Radius"
-          class="text-primary-text absolute right-0 top-0"
+          class="absolute right-0 top-0 text-primary-text"
           :storeValue="+latestBlurRadius"
           @update-blur-radius="
             (value) => {
@@ -101,7 +101,7 @@
         >
         <TextInput
           label="Spread"
-          class="text-primary-text absolute right-0 top-0"
+          class="absolute right-0 top-0 text-primary-text"
           :storeValue="+latestSpread"
           @update-spread="
             (value) => {
@@ -124,12 +124,21 @@
         :storeValue="+latestSpread"
       />
     </div>
+    <div>
+      <div class="relative flex flex-col justify-center">
+        <label for="range" class="mb-8 block text-center text-xl font-medium"
+          >Inset</label
+        >
+        <BinaryToggle />
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import Slider from "./Slider.vue";
 import TextInput from "./TextInput.vue";
+import BinaryToggle from "./BinaryToggle.vue";
 import { useShadowStore } from "../stores/ShadowStore";
 import { ref } from "vue";
 const shadowStore = useShadowStore();

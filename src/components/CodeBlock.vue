@@ -3,7 +3,7 @@
     <highlightjs
         language="css"
         :code="`div { box-shadow: ${ shadowClass }; }`"
-        class="text-xl"
+        class="text-xl text-pretty"
     />
 
   </pre>
