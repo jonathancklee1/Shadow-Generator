@@ -124,13 +124,18 @@
         :storeValue="+latestSpread"
       />
     </div>
-    <div>
-      <div class="relative flex flex-col justify-center">
-        <label for="range" class="mb-8 block text-center text-xl font-medium"
-          >Inset</label
-        >
-        <BinaryToggle />
-      </div>
+
+    <div class="relative flex flex-col justify-center">
+      <label for="range" class="mb-8 block text-center text-xl font-medium"
+        >Inset</label
+      >
+      <BinaryToggle />
+    </div>
+    <div class="relative flex flex-col justify-center">
+      <label for="range" class="mb-8 block text-center text-xl font-medium"
+        >Shadow Colour</label
+      >
+      <ColourPicker />
     </div>
   </div>
 </template>
@@ -139,6 +144,7 @@
 import Slider from "./Slider.vue";
 import TextInput from "./TextInput.vue";
 import BinaryToggle from "./BinaryToggle.vue";
+import ColourPicker from "./ColourPicker.vue";
 import { useShadowStore } from "../stores/ShadowStore";
 import { ref } from "vue";
 const shadowStore = useShadowStore();

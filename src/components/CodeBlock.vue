@@ -2,7 +2,7 @@
   <pre class="flex bg-[#292929] px-6 py-3">
     <highlightjs
         language="css"
-        :code="`div { box-shadow: ${ shadowClass }; }`"
+        :code="`div { box-shadow:${ shadowClass }; }`"
         class="text-xl text-pretty"
     />
 
