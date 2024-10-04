@@ -7,10 +7,11 @@ export const useShadowStore = defineStore("shadow", () => {
   const blurRadius = ref(0);
   const spread = ref(0);
   const inset = ref(false);
+  const colour = ref("");
 
   const shadowClass = computed(
     () =>
-      `${inset.value ? "inset" : ""} ${horizontalOffset.value || 0}px ${verticalOffset.value || 0}px ${blurRadius.value || 0}px ${spread.value || 0}px black`,
+      `${inset.value ? "inset" : ""} ${horizontalOffset.value || 0}px ${verticalOffset.value || 0}px ${blurRadius.value || 0}px ${spread.value || 0}px ${colour.value}`,
   );
   /**
    * Sets the horizontal offset for the shadow.
@@ -37,6 +38,11 @@ export const useShadowStore = defineStore("shadow", () => {
     inset.value = value;
   }
 
+  function setColour(value: string) {
+    console.log("setColour = " + value);
+    colour.value = value;
+  }
+
   return {
     horizontalOffset,
     verticalOffset,
@@ -44,10 +50,12 @@ export const useShadowStore = defineStore("shadow", () => {
     spread,
     shadowClass,
     inset,
+    colour,
     setHorizontalOffset,
     setVerticalOffset,
     setBlurRadius,
     setSpread,
     setInset,
+    setColour,
   };
 });
