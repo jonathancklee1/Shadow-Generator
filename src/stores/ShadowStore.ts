@@ -7,11 +7,11 @@ export const useShadowStore = defineStore("shadow", () => {
   const blurRadius = ref(0);
   const spread = ref(0);
   const inset = ref(false);
-  const colour = ref("");
+  const colour = ref("black");
 
   const shadowClass = computed(
     () =>
-      `${inset.value ? "inset" : ""} ${horizontalOffset.value || 0}px ${verticalOffset.value || 0}px ${blurRadius.value || 0}px ${spread.value || 0}px ${colour.value}`,
+      `box-shadow:${inset.value ? " inset" : ""} ${horizontalOffset.value || 0}px ${verticalOffset.value || 0}px ${blurRadius.value || 0}px ${spread.value || 0}px ${colour.value};`,
   );
   /**
    * Sets the horizontal offset for the shadow.

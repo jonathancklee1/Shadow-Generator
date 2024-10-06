@@ -14,9 +14,10 @@
 import { ref } from "vue";
 import { ColorInputWithoutInstance } from "tinycolor2";
 import { useShadowStore } from "../stores/ShadowStore";
-const pureColor = ref<ColorInputWithoutInstance>("red");
 
 const shadowStore = useShadowStore();
+const pureColor = shadowStore.colour;
+
 function setShadowColour(color: ColorInputWithoutInstance) {
   const colourString = color as string;
   shadowStore.setColour(colourString);
