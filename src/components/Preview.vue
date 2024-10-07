@@ -5,7 +5,7 @@
     <div
       class="h-20 w-52 bg-slate-500"
       ref="shadowPreview"
-      :style="{ boxShadow: shadowClass }"
+      :style="shadowClass"
     ></div>
   </div>
 </template>
