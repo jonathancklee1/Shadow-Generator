@@ -1,61 +1,46 @@
 import { defineStore } from "pinia";
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 
 export const useShadowStore = defineStore("shadow", () => {
-  const horizontalOffset = ref(0);
-  const verticalOffset = ref(0);
-  const blurRadius = ref(0);
-  const spread = ref(0);
-  const inset = ref(false);
-  const colour = ref("black");
-
-  const shadowClass = computed(
-    () =>
-      `box-shadow:${inset.value ? " inset" : ""} ${horizontalOffset.value || 0}px ${verticalOffset.value || 0}px ${blurRadius.value || 0}px ${spread.value || 0}px ${colour.value};`,
+  const shadowArray = ref([
+    {
+      horizontalOffset: "0",
+      verticalOffset: "10",
+      blurRadius: "0",
+      spread: "0",
+      inset: false,
+      colour: getRandomHex(),
+    },
+    {
+      horizontalOffset: "10",
+      verticalOffset: "0",
+      blurRadius: "0",
+      spread: "0",
+      inset: false,
+      colour: getRandomHex(),
+    },
+  ]);
+  const shadowClass = computed(() => {
+    return `box-shadow:${shadowArray.value
+      .map((shadow) => {
+        return `${shadow.inset ? " inset" : ""} ${shadow.horizontalOffset || 0}px ${shadow.verticalOffset || 0}px ${shadow.blurRadius || 0}px ${shadow.spread || 0}px ${shadow.colour}`;
+      })
+      .join(",")};`;
+  });
+  watch(
+    shadowArray,
+    () => {
+      console.log(shadowArray.value[0].horizontalOffset);
+    },
+    { deep: true },
   );
-  /**
-   * Sets the horizontal offset for the shadow.
-   * @param {number} value - the new horizontal offset value
-   */
-  function setHorizontalOffset(value: number) {
-    console.log("setHorizontalOffset = " + value);
-    horizontalOffset.value = value;
-  }
-  function setVerticalOffset(value: number) {
-    console.log("setVerticalOffset = " + value);
-    verticalOffset.value = value;
-  }
-  function setBlurRadius(value: number) {
-    console.log("setBlurRadius = " + value);
-    blurRadius.value = value;
-  }
-  function setSpread(value: number) {
-    console.log("setSpread = " + value);
-    spread.value = value;
-  }
-  function setInset(value: boolean) {
-    console.log("setInset = " + value);
-    inset.value = value;
-  }
-
-  function setColour(value: string) {
-    console.log("setColour = " + value);
-    colour.value = value;
-  }
 
   return {
-    horizontalOffset,
-    verticalOffset,
-    blurRadius,
-    spread,
     shadowClass,
-    inset,
-    colour,
-    setHorizontalOffset,
-    setVerticalOffset,
-    setBlurRadius,
-    setSpread,
-    setInset,
-    setColour,
+    shadowArray,
   };
 });
+
+function getRandomHex() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}

@@ -1,5 +1,7 @@
 <template>
   <div
+    v-for="(shadow, index) in shadowStore.shadowArray"
+    :key="index"
     class="mt-6 flex flex-col gap-4 bg-secondary-background p-6 text-secondary-text"
   >
     <div class="">
@@ -10,10 +12,10 @@
         <TextInput
           label="Horizontal Offset"
           class="absolute right-0 top-0 text-primary-text"
-          :storeValue="+latestHorizontalOffset"
+          :storeValue="+shadow.horizontalOffset"
           @update-horizontal-offset="
             (value) => {
-              shadowStore.setHorizontalOffset(value);
+              shadow.horizontalOffset = value;
             }
           "
           :min="-100"
@@ -24,12 +26,12 @@
         label="Horizontal Offset"
         @update-horizontal-offset="
           (value) => {
-            shadowStore.setHorizontalOffset(value);
+            shadow.horizontalOffset = value;
           }
         "
         :min="-100"
         :max="100"
-        :storeValue="+latestHorizontalOffset"
+        :storeValue="+shadow.horizontalOffset"
       />
     </div>
     <div>
@@ -40,10 +42,10 @@
         <TextInput
           label="Vertical Offset"
           class="absolute right-0 top-0 text-primary-text"
-          :storeValue="+latestVerticalOffset"
+          :storeValue="+shadow.verticalOffset"
           @update-vertical-offset="
             (value) => {
-              shadowStore.setVerticalOffset(value);
+              shadow.verticalOffset = value;
             }
           "
           :min="-100"
@@ -54,12 +56,12 @@
         label="Vertical Offset"
         @update-vertical-offset="
           (value) => {
-            shadowStore.setVerticalOffset(value);
+            shadow.verticalOffset = value;
           }
         "
         :min="-100"
         :max="100"
-        :storeValue="+latestVerticalOffset"
+        :storeValue="+shadow.verticalOffset"
       />
     </div>
 
@@ -71,10 +73,10 @@
         <TextInput
           label="Blur Radius"
           class="absolute right-0 top-0 text-primary-text"
-          :storeValue="+latestBlurRadius"
+          :storeValue="+shadow.blurRadius"
           @update-blur-radius="
             (value) => {
-              shadowStore.setBlurRadius(value);
+              shadow.blurRadius = value;
             }
           "
           :min="0"
@@ -85,12 +87,12 @@
         label="Blur Radius"
         @update-blur-radius="
           (value) => {
-            shadowStore.setBlurRadius(value);
+            shadow.blurRadius = value;
           }
         "
         :min="0"
         :max="100"
-        :storeValue="+latestBlurRadius"
+        :storeValue="+shadow.blurRadius"
       />
     </div>
 
@@ -102,10 +104,10 @@
         <TextInput
           label="Spread"
           class="absolute right-0 top-0 text-primary-text"
-          :storeValue="+latestSpread"
+          :storeValue="+shadow.spread"
           @update-spread="
             (value) => {
-              shadowStore.setSpread(value);
+              shadow.spread = value;
             }
           "
           :min="-100"
@@ -116,12 +118,12 @@
         label="Spread"
         @update-spread="
           (value) => {
-            shadowStore.setSpread(value);
+            shadow.spread = value;
           }
         "
         :min="-100"
         :max="100"
-        :storeValue="+latestSpread"
+        :storeValue="+shadow.spread"
       />
     </div>
 
@@ -129,13 +131,28 @@
       <label for="range" class="mb-8 block text-center text-xl font-medium"
         >Inset</label
       >
-      <BinaryToggle />
+      <BinaryToggle
+        @update-inset="
+          (value) => {
+            console.log(value);
+            shadow.inset = value;
+          }
+        "
+      />
     </div>
     <div class="relative flex flex-col justify-center">
       <label for="range" class="mb-8 block text-center text-xl font-medium"
         >Shadow Colour</label
       >
-      <ColourPicker />
+      <ColourPicker
+        :initial-colour="shadow.colour"
+        @update-colour="
+          (value) => {
+            console.log(value);
+            shadow.colour = value;
+          }
+        "
+      />
     </div>
   </div>
 </template>
@@ -148,17 +165,6 @@ import ColourPicker from "./ColourPicker.vue";
 import { useShadowStore } from "../stores/ShadowStore";
 import { ref } from "vue";
 const shadowStore = useShadowStore();
-let latestHorizontalOffset = ref(0);
-let latestVerticalOffset = ref(0);
-let latestBlurRadius = ref(0);
-let latestSpread = ref(0);
-shadowStore.$subscribe((mutation, state) => {
-  // console.log("Store updated:" + state.horizontalOffset + state.verticalOffset);
-  latestHorizontalOffset.value = state.horizontalOffset;
-  latestVerticalOffset.value = state.verticalOffset;
-  latestBlurRadius.value = state.blurRadius;
-  latestSpread.value = state.spread;
-});
 </script>
 
 <style scoped></style>

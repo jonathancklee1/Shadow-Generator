@@ -6,7 +6,7 @@
       @click="
         () => {
           isInset = false;
-          shadowStore.setInset(isInset);
+          $emit(`update-inset`, isInset);
         }
       "
     >
@@ -19,7 +19,7 @@
       @click="
         () => {
           isInset = true;
-          shadowStore.setInset(isInset);
+          $emit(`update-inset`, isInset);
         }
       "
     >
@@ -31,7 +31,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useShadowStore } from "../stores/ShadowStore";
-const shadowStore = useShadowStore();
 const isInset = ref(false);
 </script>
 

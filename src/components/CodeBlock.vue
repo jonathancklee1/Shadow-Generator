@@ -1,9 +1,9 @@
 <template>
-  <div class="group relative" @click="copyToClipboard(shadowClass)">
+  <div class="group relative" @click="copyToClipboard(shadowStore.shadowClass)">
     <pre class="flex cursor-pointer bg-[#292929] px-8 py-6">
       <highlightjs
           language="css"
-          :code="`div { ${ shadowClass } }`"
+          :code="`div { ${ shadowStore.shadowClass } }`"
           class="text-xl text-pretty"
       />
      
@@ -23,7 +23,6 @@ import { storeToRefs } from "pinia";
 import hljsVuePlugin from "@highlightjs/vue-plugin";
 import { defineComponent, ref } from "vue";
 const shadowStore = useShadowStore();
-const { shadowClass } = storeToRefs(shadowStore);
 
 const isCopied = ref(false);
 function copyToClipboard(text: string) {
