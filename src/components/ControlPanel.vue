@@ -2,7 +2,7 @@
   <div
     v-for="(shadow, index) in shadowStore.shadowArray"
     :key="index"
-    class="mt-6 flex flex-col gap-4 bg-secondary-background p-6 text-secondary-text"
+    class="mb-6 mt-6 flex flex-col gap-4 bg-secondary-background p-6 text-secondary-text"
   >
     <div class="">
       <div class="relative">
@@ -155,6 +155,7 @@
       />
     </div>
   </div>
+  <AddShadowButton />
 </template>
 
 <script setup lang="ts">
@@ -162,8 +163,8 @@ import Slider from "./Slider.vue";
 import TextInput from "./TextInput.vue";
 import BinaryToggle from "./BinaryToggle.vue";
 import ColourPicker from "./ColourPicker.vue";
+import AddShadowButton from "./AddShadowButton.vue";
 import { useShadowStore } from "../stores/ShadowStore";
-import { ref } from "vue";
 const shadowStore = useShadowStore();
 </script>
 

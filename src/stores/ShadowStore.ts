@@ -34,10 +34,21 @@ export const useShadowStore = defineStore("shadow", () => {
     },
     { deep: true },
   );
+  function addShadow() {
+    shadowArray.value.push({
+      horizontalOffset: "0",
+      verticalOffset: "10",
+      blurRadius: "0",
+      spread: "0",
+      inset: false,
+      colour: getRandomHex(),
+    });
+  }
 
   return {
     shadowClass,
     shadowArray,
+    addShadow,
   };
 });
 
