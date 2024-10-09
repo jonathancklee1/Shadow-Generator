@@ -21,4 +21,5 @@ body {
 .vc-color-wrap.transparent {
   width: 100% !important ;
   height: 100% !important ;
+  margin-right: 0px !important;
 }
