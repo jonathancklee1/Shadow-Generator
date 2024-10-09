@@ -44,11 +44,20 @@ export const useShadowStore = defineStore("shadow", () => {
       colour: getRandomHex(),
     });
   }
+  function removeShadow(index: number) {
+    shadowArray.value.splice(index, 1);
+  }
 
+  function getIndexShadow(index: number) {
+    const selectedShadow = shadowArray.value[index];
+    return `${selectedShadow.horizontalOffset}px ${selectedShadow.verticalOffset}px ${selectedShadow.blurRadius}px ${selectedShadow.spread}px ${selectedShadow.inset}px ${selectedShadow.colour}`;
+  }
   return {
     shadowClass,
     shadowArray,
     addShadow,
+    removeShadow,
+    getIndexShadow,
   };
 });
 

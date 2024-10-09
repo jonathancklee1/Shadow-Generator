@@ -5,7 +5,13 @@
     :key="index"
   >
     <input type="checkbox" />
-    <div class="collapse-title text-xl font-medium">Shadow {{ index + 1 }}</div>
+    <div class="collapse-title flex items-center gap-4 text-xl font-medium">
+      <span> Shadow {{ index + 1 }} </span>
+      <span class="rounded-md bg-black p-4 text-xl font-medium text-white">
+        {{ shadowStore.getIndexShadow(index) }}
+      </span>
+    </div>
+
     <div class="collapse-content">
       <div class="mt-4">
         <div class="relative">
@@ -157,14 +163,12 @@
           "
         />
       </div>
+      <button class="btn mt-8" @click="() => shadowStore.removeShadow(index)">
+        X
+      </button>
     </div>
   </div>
 
-  <!-- <div
-    v-for="(shadow, index) in shadowStore.shadowArray"
-    :key="index"
-    class="mb-6 mt-6 flex flex-col gap-4 bg-secondary-background p-6 text-secondary-text"
-  ></div> -->
   <AddShadowButton />
 </template>
 
