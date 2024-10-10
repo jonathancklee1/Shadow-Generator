@@ -1,9 +1,9 @@
 <template>
   <div
-    class="mt-6 flex aspect-square flex-col items-center justify-center bg-white"
+    class="mt-6 flex aspect-square flex-col items-center justify-center overflow-hidden bg-secondary-background"
   >
     <div
-      class="h-20 w-52 bg-slate-500"
+      class="h-1/5 w-[35%] bg-slate-500"
       ref="shadowPreview"
       :style="shadowClass"
     ></div>

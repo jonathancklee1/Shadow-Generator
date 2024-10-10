@@ -5,30 +5,32 @@
     :key="index"
   >
     <input type="checkbox" />
-    <div class="collapse-title flex items-center gap-4 text-xl font-medium">
-      <span> Shadow {{ index + 1 }} </span>
-      <span class="rounded-md bg-black p-4 text-xl font-medium text-white">
-        {{ shadowStore.getIndexShadow(index) }}
-      </span>
+    <div
+      class="collapse-title flex max-h-fit w-full items-center gap-4 text-xl font-medium"
+    >
+      <p
+        class="w-fit rounded-md bg-primary-background p-4 text-xl font-medium text-primary-text"
+        v-html="shadowStore.getIndexShadow(index)"
+      ></p>
     </div>
 
     <div class="collapse-content">
       <div class="mt-4">
-        <div class="relative">
+        <div class="relative flex justify-between">
           <label for="range" class="mb-8 block text-center text-xl font-medium"
             >Horizontal Offset</label
           >
           <TextInput
             label="Horizontal Offset"
-            class="absolute right-0 top-0 text-primary-text"
+            class="text-primary-text"
             :storeValue="+shadow.horizontalOffset"
             @update-horizontal-offset="
               (value) => {
                 shadow.horizontalOffset = value;
               }
             "
-            :min="-100"
-            :max="100"
+            :min="minValue"
+            :max="maxValue"
           />
         </div>
         <Slider
@@ -38,27 +40,27 @@
               shadow.horizontalOffset = value;
             }
           "
-          :min="-100"
-          :max="100"
+          :min="minValue"
+          :max="maxValue"
           :storeValue="+shadow.horizontalOffset"
         />
       </div>
       <div>
-        <div class="relative">
+        <div class="relative flex justify-between">
           <label for="range" class="mb-8 block text-center text-xl font-medium"
             >Vertical Offset</label
           >
           <TextInput
             label="Vertical Offset"
-            class="absolute right-0 top-0 text-primary-text"
+            class="text-primary-text"
             :storeValue="+shadow.verticalOffset"
             @update-vertical-offset="
               (value) => {
                 shadow.verticalOffset = value;
               }
             "
-            :min="-100"
-            :max="100"
+            :min="minValue"
+            :max="maxValue"
           />
         </div>
         <Slider
@@ -68,20 +70,20 @@
               shadow.verticalOffset = value;
             }
           "
-          :min="-100"
-          :max="100"
+          :min="minValue"
+          :max="maxValue"
           :storeValue="+shadow.verticalOffset"
         />
       </div>
 
       <div>
-        <div class="relative">
+        <div class="relative flex justify-between">
           <label for="range" class="mb-8 block text-center text-xl font-medium"
             >Blur Radius</label
           >
           <TextInput
             label="Blur Radius"
-            class="absolute right-0 top-0 text-primary-text"
+            class="text-primary-text"
             :storeValue="+shadow.blurRadius"
             @update-blur-radius="
               (value) => {
@@ -89,7 +91,7 @@
               }
             "
             :min="0"
-            :max="100"
+            :max="maxValue"
           />
         </div>
         <Slider
@@ -100,27 +102,27 @@
             }
           "
           :min="0"
-          :max="100"
+          :max="maxValue"
           :storeValue="+shadow.blurRadius"
         />
       </div>
 
       <div>
-        <div class="relative">
+        <div class="relative flex justify-between">
           <label for="range" class="mb-8 block text-center text-xl font-medium"
             >Spread</label
           >
           <TextInput
             label="Spread"
-            class="absolute right-0 top-0 text-primary-text"
+            class="text-primary-text"
             :storeValue="+shadow.spread"
             @update-spread="
               (value) => {
                 shadow.spread = value;
               }
             "
-            :min="-100"
-            :max="100"
+            :min="minValue"
+            :max="maxValue"
           />
         </div>
         <Slider
@@ -130,8 +132,8 @@
               shadow.spread = value;
             }
           "
-          :min="-100"
-          :max="100"
+          :min="minValue"
+          :max="maxValue"
           :storeValue="+shadow.spread"
         />
       </div>
@@ -180,6 +182,14 @@ import ColourPicker from "./ColourPicker.vue";
 import AddShadowButton from "./AddShadowButton.vue";
 import { useShadowStore } from "../stores/ShadowStore";
 const shadowStore = useShadowStore();
+const minValue = -200;
+const maxValue = 200;
 </script>
 
-<style></style>
+<style>
+.collapse-arrow > .collapse-title:after {
+  top: 50%;
+  width: 16px;
+  height: 16px;
+}
+</style>

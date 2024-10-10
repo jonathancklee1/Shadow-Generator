@@ -50,7 +50,7 @@ export const useShadowStore = defineStore("shadow", () => {
 
   function getIndexShadow(index: number) {
     const selectedShadow = shadowArray.value[index];
-    return `${selectedShadow.horizontalOffset}px ${selectedShadow.verticalOffset}px ${selectedShadow.blurRadius}px ${selectedShadow.spread}px ${selectedShadow.inset}px ${selectedShadow.colour}`;
+    return `<span class="text-pretty">${selectedShadow.horizontalOffset}px ${selectedShadow.verticalOffset}px ${selectedShadow.blurRadius}px ${selectedShadow.spread}px ${selectedShadow.inset ? "inset" : ""}</span> <span style="color: ${selectedShadow.colour};">${selectedShadow.colour}</span> `;
   }
   return {
     shadowClass,
