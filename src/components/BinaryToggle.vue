@@ -1,7 +1,7 @@
 <template>
   <div class="join mx-auto">
     <button
-      class="btn join-item min-w-28 text-lg"
+      class="box-button min-w-28 border-2 text-base"
       :class="{ selected: !isInset }"
       @click="
         () => {
@@ -14,7 +14,7 @@
     </button>
     <div class="divider divider-horizontal"></div>
     <button
-      class="btn join-item min-w-28 text-lg"
+      class="box-button min-w-28 border-2 p-2 text-base"
       :class="{ selected: isInset }"
       @click="
         () => {
@@ -30,12 +30,11 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { useShadowStore } from "../stores/ShadowStore";
 const isInset = ref(false);
 </script>
 
 <style scoped>
-.btn.selected {
-  @apply btn-primary;
+button.selected {
+  @apply translate-x-1 translate-y-1 shadow-none;
 }
 </style>

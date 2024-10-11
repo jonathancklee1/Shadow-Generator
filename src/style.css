@@ -14,6 +14,8 @@
   --secondary-text: #000000;
   --primary-background: #000000;
   --secondary-background: #ffffff;
+  --shadow-solid: 5px 5px white;
+  --shadow-solid-secondary: 5px 5px black;
 }
 body {
   color: var(--primary-text);
@@ -22,4 +24,8 @@ body {
   width: 100% !important ;
   height: 100% !important ;
   margin-right: 0px !important;
+}
+
+.box-button {
+  @apply shadow-solid-secondary border-2 border-primary-background bg-secondary-background uppercase text-primary-background transition-all hover:bg-primary-background hover:text-secondary-background;
 }

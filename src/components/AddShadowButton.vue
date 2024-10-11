@@ -1,9 +1,9 @@
 <template>
   <button
-    class="mt-4 w-full border-8 border-white bg-black p-4 text-xl font-bold uppercase text-white transition-all hover:bg-white hover:text-black"
+    class="shadow-solid mt-4 w-full border-2 border-secondary-background bg-primary-background p-4 text-sm font-medium uppercase text-secondary-background transition-all hover:bg-secondary-background hover:text-primary-background"
     @click="store.addShadow"
   >
-    Add Shadow
+    + Add Shadow
   </button>
 </template>
 

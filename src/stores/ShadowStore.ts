@@ -11,14 +11,6 @@ export const useShadowStore = defineStore("shadow", () => {
       inset: false,
       colour: getRandomHex(),
     },
-    {
-      horizontalOffset: "10",
-      verticalOffset: "0",
-      blurRadius: "0",
-      spread: "0",
-      inset: false,
-      colour: getRandomHex(),
-    },
   ]);
   const shadowClass = computed(() => {
     return `box-shadow:${shadowArray.value
@@ -27,13 +19,7 @@ export const useShadowStore = defineStore("shadow", () => {
       })
       .join(",")};`;
   });
-  watch(
-    shadowArray,
-    () => {
-      console.log(shadowArray.value[0].horizontalOffset);
-    },
-    { deep: true },
-  );
+
   function addShadow() {
     shadowArray.value.push({
       horizontalOffset: "0",

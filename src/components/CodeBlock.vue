@@ -1,6 +1,9 @@
 <template>
-  <div class="group relative" @click="copyToClipboard(shadowStore.shadowClass)">
-    <pre class="flex cursor-pointer bg-[#292929] px-8 py-6">
+  <div
+    class="group relative border-2 border-white"
+    @click="copyToClipboard(shadowStore.shadowClass)"
+  >
+    <pre class="flex cursor-pointer bg-black px-8 py-6">
       <highlightjs
           language="css"
           :code="`div { ${ shadowStore.shadowClass } }`"

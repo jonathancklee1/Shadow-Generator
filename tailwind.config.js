@@ -9,6 +9,10 @@ export default {
         "primary-background": `var(--primary-background)`,
         "secondary-background": `var(--secondary-background)`,
       },
+      boxShadow: {
+        solid: "var(--shadow-solid)",
+        "solid-secondary": "var(--shadow-solid-secondary)",
+      },
     },
   },
   plugins: [require("daisyui")],
