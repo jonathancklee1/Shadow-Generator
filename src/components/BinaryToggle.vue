@@ -33,8 +33,4 @@ import { ref } from "vue";
 const isInset = ref(false);
 </script>
 
-<style scoped>
-button.selected {
-  @apply translate-x-1 translate-y-1 shadow-none;
-}
-</style>
+<style scoped></style>

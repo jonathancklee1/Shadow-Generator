@@ -10,15 +10,19 @@
   margin: 0;
 }
 :root {
-  --primary-text: #ffffff;
-  --secondary-text: #000000;
-  --primary-background: #000000;
-  --secondary-background: #ffffff;
-  --shadow-solid: 5px 5px white;
-  --shadow-solid-secondary: 5px 5px black;
+  --primary-text: #f3dfc1;
+  --secondary-text: #1a1c1a;
+  --tertiary-text: #f3cea1;
+
+  --primary-background: #1a1c1a;
+  --secondary-background: #f3dfc1;
+  --tertiary-background: #f3cea1;
+  --shadow-solid: 5px 5px var(--tertiary-background);
+  --shadow-solid-secondary: 5px 5px var(--tertiary-background);
 }
 body {
   color: var(--primary-text);
+  font-family: "Roboto Mono", monospace;
 }
 .vc-color-wrap.transparent {
   width: 100% !important ;
@@ -27,5 +31,10 @@ body {
 }
 
 .box-button {
-  @apply shadow-solid-secondary border-2 border-primary-background bg-secondary-background uppercase text-primary-background transition-all hover:bg-primary-background hover:text-secondary-background;
+  @apply border-2 border-primary-background bg-secondary-background uppercase text-primary-background shadow-solid-secondary transition-all hover:bg-primary-background hover:text-secondary-background focus:bg-primary-background focus:text-secondary-background;
+}
+
+button.selected,
+button:focus {
+  @apply translate-x-1 translate-y-1 shadow-none;
 }

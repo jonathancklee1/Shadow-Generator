@@ -1,6 +1,6 @@
 <template>
   <div
-    class="group relative border-2 border-white"
+    class="group relative border-2 border-primary-text"
     @click="copyToClipboard(shadowStore.shadowClass)"
   >
     <pre class="flex cursor-pointer bg-black px-8 py-6">
@@ -13,7 +13,7 @@
   
     </pre>
     <button
-      class="btn invisible absolute right-0 top-4 flex items-center justify-center rounded-2xl bg-secondary-background p-2 px-4 font-bold text-secondary-text opacity-0 transition-all duration-300 ease-in-out hover:bg-slate-600 hover:text-primary-text group-hover:visible group-hover:-translate-x-4 group-hover:opacity-100"
+      class="invisible absolute right-0 top-4 flex items-center justify-center rounded-2xl border-2 border-secondary-background bg-primary-background p-2 px-4 font-bold text-primary-text opacity-0 transition-all duration-300 ease-in-out hover:bg-secondary-background hover:text-secondary-text group-hover:visible group-hover:-translate-x-4 group-hover:opacity-100"
     >
       <span>{{ isCopied ? "Copied!" : "Copy" }}</span>
     </button>

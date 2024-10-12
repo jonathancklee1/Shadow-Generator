@@ -1,7 +1,7 @@
 <template>
-  <div class="grow">
+  <div class="max-h-full grow overflow-y-auto">
     <div
-      class="collapse collapse-arrow mt-4 rounded-none bg-secondary-background text-secondary-text lg:mt-0"
+      class="collapse collapse-arrow mt-4 rounded-none bg-secondary-background text-secondary-text lg:mt-2"
       v-for="(shadow, index) in shadowStore.shadowArray"
       :key="index"
     >
@@ -10,7 +10,7 @@
         class="collapse-title flex max-h-fit w-full items-center gap-4 text-xl font-medium"
       >
         <p
-          class="w-fit rounded-md bg-primary-background p-4 text-xl font-medium text-primary-text"
+          class="w-fit bg-primary-background p-4 text-xl font-medium text-primary-text"
           v-html="shadowStore.getIndexShadow(index)"
         ></p>
       </div>
@@ -25,7 +25,7 @@
             >
             <TextInput
               label="Horizontal Offset"
-              class="text-primary-text"
+              class="rounded-none border-2 border-white text-primary-text"
               :storeValue="+shadow.horizontalOffset"
               @update-horizontal-offset="
                 (value) => {
@@ -57,7 +57,7 @@
             >
             <TextInput
               label="Vertical Offset"
-              class="text-primary-text"
+              class="rounded-none border-2 border-white text-primary-text"
               :storeValue="+shadow.verticalOffset"
               @update-vertical-offset="
                 (value) => {
@@ -90,7 +90,7 @@
             >
             <TextInput
               label="Blur Radius"
-              class="text-primary-text"
+              class="rounded-none border-2 border-white text-primary-text"
               :storeValue="+shadow.blurRadius"
               @update-blur-radius="
                 (value) => {
@@ -123,7 +123,7 @@
             >
             <TextInput
               label="Spread"
-              class="text-primary-text"
+              class="rounded-none border-2 border-white text-primary-text"
               :storeValue="+shadow.spread"
               @update-spread="
                 (value) => {
