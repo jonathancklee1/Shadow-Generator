@@ -7,7 +7,7 @@
         $emit(`update${label.replace(/\s/g, '')}`, event.target.value);
       }
     "
-    class="input input-bordered w-full max-w-20"
+    class="text-tertiary-text input input-bordered w-full max-w-20"
     :min="min"
     :max="max"
   />

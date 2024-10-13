@@ -6,8 +6,10 @@ export default {
       colors: {
         "primary-text": `var(--primary-text)`,
         "secondary-text": `var(--secondary-text)`,
+        "tertiary-text": `var(--tertiary-text)`,
         "primary-background": `var(--primary-background)`,
         "secondary-background": `var(--secondary-background)`,
+        "tertiary-background": `var(--tertiary-background)`,
       },
       boxShadow: {
         solid: "var(--shadow-solid)",

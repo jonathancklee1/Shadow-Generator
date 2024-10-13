@@ -20,7 +20,7 @@
           <div class="relative flex justify-between">
             <label
               for="range"
-              class="mb-8 block text-base font-medium uppercase"
+              class="mb-8 block text-base font-medium uppercase tracking-widest"
               >Horizontal Offset</label
             >
             <TextInput
@@ -52,7 +52,7 @@
           <div class="relative flex justify-between">
             <label
               for="range"
-              class="texbasexl mb-8 block font-medium uppercase"
+              class="mb-8 block text-base font-medium uppercase tracking-widest"
               >Vertical Offset</label
             >
             <TextInput
@@ -85,7 +85,7 @@
           <div class="relative flex justify-between">
             <label
               for="range"
-              class="baseext-xl mb-8 block font-medium uppercase"
+              class="mb-8 block text-base font-medium uppercase tracking-widest"
               >Blur Radius</label
             >
             <TextInput
@@ -118,7 +118,7 @@
           <div class="relative flex justify-between">
             <label
               for="range"
-              class="blockbasetext-xl mb-8 font-medium uppercase"
+              class="mb-8 text-base font-medium uppercase tracking-widest"
               >Spread</label
             >
             <TextInput
@@ -148,7 +148,9 @@
         </div>
 
         <div class="relative flex flex-col justify-center">
-          <label for="range" class="mb-4 text-base font-medium uppercase"
+          <label
+            for="range"
+            class="mb-4 text-base font-medium uppercase tracking-widest"
             >Inset</label
           >
           <BinaryToggle
@@ -161,7 +163,9 @@
           />
         </div>
         <div class="relative mt-6 flex flex-col justify-center">
-          <label for="range" class="mb-4 text-base font-medium uppercase"
+          <label
+            for="range"
+            class="mb-4 text-base font-medium uppercase tracking-widest"
             >Shadow Colour</label
           >
           <ColourPicker

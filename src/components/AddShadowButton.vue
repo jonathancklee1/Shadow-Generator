@@ -1,6 +1,6 @@
 <template>
   <button
-    class="mt-4 w-full border-2 border-secondary-background bg-primary-background p-4 text-sm font-medium uppercase text-secondary-background shadow-solid transition-all hover:bg-secondary-background hover:text-primary-background focus:translate-x-1 focus:translate-y-1"
+    class="mt-4 w-full border-2 border-secondary-background bg-primary-background p-4 text-sm font-medium uppercase text-secondary-background shadow-solid transition-all hover:bg-secondary-background hover:text-primary-background focus:translate-x-0 focus:translate-y-1"
     @click="store.addShadow"
   >
     + Add Shadow
