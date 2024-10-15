@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="basis-1/3">
     <AddShadowButton />
-    <div class="mt-2 max-h-full grow overflow-y-auto">
+    <div class="mt-6 max-h-full grow overflow-y-auto lg:pb-10">
       <div
-        class="collapse collapse-arrow mt-4 rounded-none bg-secondary-background text-secondary-text lg:mt-2"
+        class="collapse collapse-arrow rounded-none bg-secondary-background text-secondary-text"
         v-for="(shadow, index) in shadowStore.shadowArray"
         :key="index"
       >
