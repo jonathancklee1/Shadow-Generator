@@ -1,7 +1,7 @@
 <template>
   <header>
     <h1
-      class="relative inset-0 z-20 mx-auto max-w-[600px] overflow-hidden border-2 border-tertiary-background bg-secondary-background p-4 text-center text-4xl font-medium tracking-[.4rem] text-secondary-text lg:mb-6 lg:p-6"
+      class="relative inset-0 z-20 mx-auto max-w-[600px] overflow-hidden border-2 border-tertiary-background bg-secondary-background p-4 text-center text-2xl font-semibold tracking-[.4rem] text-secondary-text md:text-4xl lg:mb-6 lg:p-6"
     >
       Shadow Generator
     </h1>

@@ -12,6 +12,7 @@
       </div>
       <ControlPanel />
     </main>
+    <Footer />
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import AppHeader from "./components/AppHeader.vue";
 import CodeBlock from "./components/CodeBlock.vue";
 import Preview from "./components/Preview.vue";
 import ControlPanel from "./components/ControlPanel.vue";
+import Footer from "./components/Footer.vue";
 </script>
 
 <style scoped></style>

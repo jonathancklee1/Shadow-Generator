@@ -7,7 +7,7 @@
         $emit(`update${label.replace(/\s/g, '')}`, event.target.value);
       }
     "
-    class="text-tertiary-text input input-bordered w-full max-w-20"
+    class="input w-full max-w-20 border-tertiary-background text-tertiary-text"
     :min="min"
     :max="max"
   />

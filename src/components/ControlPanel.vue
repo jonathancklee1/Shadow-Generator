@@ -27,7 +27,7 @@
               >
               <TextInput
                 label="Horizontal Offset"
-                class="rounded-none border-2 border-white text-primary-text"
+                class="rounded-none border-2 text-primary-text"
                 :storeValue="+shadow.horizontalOffset"
                 @update-horizontal-offset="
                   (value) => {
@@ -59,7 +59,7 @@
               >
               <TextInput
                 label="Vertical Offset"
-                class="rounded-none border-2 border-white text-primary-text"
+                class="rounded-none border-2 text-primary-text"
                 :storeValue="+shadow.verticalOffset"
                 @update-vertical-offset="
                   (value) => {
@@ -92,7 +92,7 @@
               >
               <TextInput
                 label="Blur Radius"
-                class="rounded-none border-2 border-white text-primary-text"
+                class="rounded-none border-2 text-primary-text"
                 :storeValue="+shadow.blurRadius"
                 @update-blur-radius="
                   (value) => {
@@ -125,7 +125,7 @@
               >
               <TextInput
                 label="Spread"
-                class="rounded-none border-2 border-white text-primary-text"
+                class="rounded-none border-2 text-primary-text"
                 :storeValue="+shadow.spread"
                 @update-spread="
                   (value) => {
