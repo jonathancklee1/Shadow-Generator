@@ -3,7 +3,7 @@
     <AddShadowButton />
     <div class="mt-6 max-h-full grow overflow-y-auto lg:pb-10">
       <div
-        class="collapse collapse-arrow rounded-none bg-secondary-background text-secondary-text"
+        class="collapse collapse-arrow mb-4 rounded-none bg-secondary-background text-secondary-text"
         v-for="(shadow, index) in shadowStore.shadowArray"
         :key="index"
       >
@@ -30,7 +30,7 @@
                 class="rounded-none border-2 text-primary-text"
                 :storeValue="+shadow.horizontalOffset"
                 @update-horizontal-offset="
-                  (value) => {
+                  (value: string) => {
                     shadow.horizontalOffset = value;
                   }
                 "
@@ -62,7 +62,7 @@
                 class="rounded-none border-2 text-primary-text"
                 :storeValue="+shadow.verticalOffset"
                 @update-vertical-offset="
-                  (value) => {
+                  (value: string) => {
                     shadow.verticalOffset = value;
                   }
                 "
@@ -95,7 +95,7 @@
                 class="rounded-none border-2 text-primary-text"
                 :storeValue="+shadow.blurRadius"
                 @update-blur-radius="
-                  (value) => {
+                  (value: string) => {
                     shadow.blurRadius = value;
                   }
                 "
@@ -128,7 +128,7 @@
                 class="rounded-none border-2 text-primary-text"
                 :storeValue="+shadow.spread"
                 @update-spread="
-                  (value) => {
+                  (value: string) => {
                     shadow.spread = value;
                   }
                 "

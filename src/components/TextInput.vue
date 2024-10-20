@@ -4,7 +4,10 @@
     :value="storeValue"
     @input="
       (event) => {
-        $emit(`update${label.replace(/\s/g, '')}`, event.target.value);
+        $emit(
+          `update${label?.replace(/\s/g, '')}`,
+          (event.target as HTMLInputElement).value,
+        );
       }
     "
     class="input w-full max-w-20 border-tertiary-background text-tertiary-text"
@@ -13,9 +16,8 @@
   />
 </template>
 
-<script setup>
-import { useShadowStore } from "../stores/ShadowStore";
-const props = defineProps({
+<script setup lang="ts">
+defineProps({
   label: String,
   storeValue: Number,
   min: Number,

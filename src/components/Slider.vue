@@ -12,15 +12,19 @@
       class="range"
       :value="storeValue"
       @input="
-        (event) =>
-          $emit(`update${label.replace(/\s/g, '')}`, event.target.value)
+        (event) => {
+          if (event.target) {
+            const value = (event.target as HTMLInputElement).value;
+            $emit(`update${label?.replace(/\s/g, '')}`, value);
+          }
+        }
       "
     />
   </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   label: String,
   storeValue: Number,
   min: Number,
