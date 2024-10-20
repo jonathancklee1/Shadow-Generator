@@ -1,10 +1,10 @@
 <template>
   <div
-    class="relative h-screen w-full overflow-y-scroll bg-primary-background px-4 py-8"
+    class="relative h-full min-h-screen w-full overflow-y-auto bg-primary-background px-4 py-8"
   >
     <AppHeader />
     <main
-      class="mx-auto w-full gap-4 bg-primary-background pb-4 pt-4 lg:flex lg:max-h-[1200px] lg:bg-transparent lg:px-0 lg:pt-0 xl:max-w-screen-xl"
+      class="mx-auto w-full max-w-[1100px] gap-4 bg-primary-background pb-4 pt-4 lg:flex lg:max-h-[1200px] lg:bg-transparent lg:px-0 lg:pt-0"
     >
       <div class="basis-2/3">
         <CodeBlock />

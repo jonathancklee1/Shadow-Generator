@@ -48,5 +48,11 @@ export const useShadowStore = defineStore("shadow", () => {
 });
 
 function getRandomHex() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  let hexCode = "#";
+
+  while (hexCode.length < 7) {
+    hexCode += Math.round(Math.random() * 15).toString(16);
+  }
+
+  return hexCode;
 }

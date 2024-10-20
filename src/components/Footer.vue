@@ -1,5 +1,5 @@
 <template>
-  <footer class="flex items-center justify-center gap-2 py-10">
+  <footer class="flex items-center justify-center gap-2 pt-10">
     <p class="text-center">
       A website made by
       <a
