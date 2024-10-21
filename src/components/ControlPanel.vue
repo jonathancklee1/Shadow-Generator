@@ -7,7 +7,7 @@
         v-for="(shadow, index) in shadowStore.shadowArray"
         :key="index"
       >
-        <input type="checkbox" />
+        <input type="checkbox" checked />
         <div
           class="collapse-title flex max-h-fit w-full items-center gap-4 text-xl font-medium"
         >
