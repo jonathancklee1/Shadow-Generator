@@ -1,5 +1,19 @@
-# Vue 3 + TypeScript + Vite
+# Shadow Generator
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Shadow Generator makes it easier to create box shadows for web development in an interactive and visual way.     
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+Click here to visit the site: [https://jonathancklee1.github.io/learn-flags/](https://jonathancklee1.github.io/shadow-generator/)
+
+## Features
+
+-   **Customise each box shadow with sliders and inputs**
+-   **Visually see what each property for a box shadow does**
+-   **Add and remove multiple shadows**
+-   **Copy to clipboard for an easy "to CSS" way**
+
+## TechStack and Packages used
+
+-   Vue
+-   Tailwind CSS
+-   Vue Pinia
+-   DaisyUi
